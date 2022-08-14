@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Press Start 2P';
+	user-select: none;
+	/* overflow: hidden; */
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(45deg, #283c86, #45a247);
+}
+
+.field {
+	width: 75vmax;
+	height: 75vmin;
+	overflow-x: scroll;
+	background: linear-gradient(rgb(0, 84, 166), transparent 1px),
+		linear-gradient(90deg, rgb(0, 84, 166), rgb(214, 201, 169) 1px);
+	background-size: var(--s) var(--s);
+	background-position: var(--x) var(--y);
+	filter: drop-shadow(2vmax -2vmin 15px rgba(0, 0, 0, 0.55));
+}
+
+.foother {
+	width: 75vmax;
+	height: 12vmin;
+	padding-top: 1vmin;
+	display: grid;
+	grid-template-columns: 3fr 1fr 2fr;
+	justify-items: center;
+	align-items: center;
+}
+
+.play {
+	width: 100%;
+	height: 100%;
+	/* background: orange; */
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	column-gap: 0;
+	justify-items: center;
+	align-items: center;
+	font-size: 2.5vmin;
+}
+
+.menu {
+	width: 100%;
+	height: 100%;
+	/* background: red; */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+	align-items: center;
+}
+
+.options {
+	width: 100%;
+	height: 100%;
+	/* background: green; */
+	display: flex;
+	flex-direction: column;
+	column-gap: 100px;
+	font-size: 1vmax;
+}
+
+.skale {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	margin-bottom: 1vmin;
+	justify-items: center;
+	align-items: center;
+}
+
+.speed {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	justify-items: center;
+	align-items: center;
+}
+
+button {
+	width: 5vmax;
+	height: 6vmin;
+	background: linear-gradient(45deg, #45a247, #283c86);
+	cursor: pointer;
+	font-size: 0.8vmax;
+	border-radius: 0.75vmax;
+	transition: 1s;
+}
+
+.speed button,
+.skale button {
+	font-size: 2vmax;
+}
+
+button:hover {
+	transform: scale(1.1);
+	box-shadow: 0.25vmax 0.25vmax black;
+}
+
+#play {
+	width: 12vmax;
+	height: 10vmin;
+	font-size: 2.2vmax;
+}
+
+.rules {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.75);
+	z-index: 2;
+}
+
+.rules-info {
+	width: 50%;
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	line-height: 7vmin;
+	font-size: 3vmin;
+	color: aqua;
+}
+
+.reset {
+	margin-top: 5vmin;
+	color: darkkhaki;
+	transition: 1s;
+}
+
+.reset:hover {
+	cursor: pointer;
+	letter-spacing: 0.5vmax;
+}
+
+.rules-info input {
+	position: relative;
+	width: 2.75vmax;
+	height: 5vmin;
+	background: transparent;
+	font-size: 3vmin;
+	text-align: center;
+	color: aqua;
+	border: none;
+	border-bottom: 1vmin solid aqua;
+}
+
+.rules-info input:hover {
+	cursor: default
+}
+
+.rules-info input:focus {
+	outline: none;
+	caret-color: transparent;
+	user-select: none;
+}
+
+.rules-button {
+	position: absolute;
+	top: 10vmin;
+	left: calc(6.25vmax - 2.5vmax);
+}
+
+/* @media(orientation: portrait)  {
+  body {
+    transform: rotateZ(90deg);
+    width: 100vh;
+    height: 100%;
+  }
+
+  .field {
+    height: 75vmin;
+    width: 75vmax;
+  }
+} */
