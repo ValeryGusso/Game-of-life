@@ -33,11 +33,6 @@ $cleare.addEventListener('click', () => game.cleare())
 $rulesButton.addEventListener('click', rulesShow)
 $rules.addEventListener('click', rulesHide)
 
-$canvas.addEventListener('click', () => $canvas.style.cursor = 'grab')
-
-// $canvas.style.cursor = 'grab'
-// $canvas.style.cursor = 'grab'
-
 // Изменение масштаба и перемещение
 let offsetX = 0
 let offsetY = 0
@@ -157,11 +152,10 @@ $canvas.height = field.height()
 
 class Cell {
 	constructor(row, col, isAlive) {
-		;(this.row = row), (this.col = col), (this.neighbours = 0), (this.isAlive = isAlive)
-		// this.row = row,
-		// this.col = col,
-		// this.neighbours = 0,
-		// this.isAlive = isAlive
+		this.row = row,
+		this.col = col,
+		this.neighbours = 0,
+		this.isAlive = isAlive
 	}
 
 	render() {
