@@ -160,11 +160,11 @@ class Cell {
 
 	render() {
 		const size = 20 * field.skale
-		this.isAlive ? (ctx.fillStyle = 'black') : (ctx.fillStyle = 'transparent')
+		this.isAlive ? (ctx.fillStyle = '#BBD2C5') : (ctx.fillStyle = 'transparent')
 		ctx.fillRect(this.col * size + offsetX, this.row * size + offsetY, size, size)
 		if (this.isAlive) {
-			ctx.strokeStyle = 'white'
-			ctx.lineWidth = 1 * field.skale
+			ctx.strokeStyle = '#232526'
+			ctx.lineWidth = 0.5 * field.skale
 			ctx.strokeRect(this.col * size + offsetX, this.row * size + offsetY, size, size)
 		}
 	}

@@ -23,8 +23,10 @@ body {
 	width: 75vmax;
 	height: 75vmin;
 	overflow-x: scroll;
-	background: linear-gradient(rgb(0, 84, 166), transparent 1px),
-		linear-gradient(90deg, rgb(0, 84, 166), rgb(214, 201, 169) 1px);
+	/* background: linear-gradient(rgb(0, 84, 166), transparent 1px),
+		linear-gradient(90deg, rgb(0, 84, 166), rgb(214, 201, 169) 1px); */
+	background: linear-gradient(rgba(240, 242, 240, 0.3), transparent 1px),
+		linear-gradient(90deg, rgba(240, 242, 240, 0.3), #232526 1px);
 	background-size: var(--s) var(--s);
 	background-position: var(--x) var(--y);
 	filter: drop-shadow(2vmax -2vmin 15px rgba(0, 0, 0, 0.55));
@@ -105,7 +107,7 @@ button {
 }
 
 button:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
 	box-shadow: 0.25vmax 0.25vmax black;
 }
 
@@ -177,16 +179,3 @@ button:hover {
 	top: 10vmin;
 	left: calc(6.25vmax - 2.5vmax);
 }
-
-/* @media(orientation: portrait)  {
-  body {
-    transform: rotateZ(90deg);
-    width: 100vh;
-    height: 100%;
-  }
-
-  .field {
-    height: 75vmin;
-    width: 75vmax;
-  }
-} */
