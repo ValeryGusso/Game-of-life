@@ -31,16 +31,20 @@
 				</div>
 			</div>
 		</div>
-    <div class="rules" id="rules" data-place="true">
-      <div class="rules-info"><p>- Each cell with <input id="diesmin" type="number"/> or less neighbors gonna die by loneliness.
-				<br>- Each cell with <input id="diesmax" type="number" /> or more neighbors dies too but this time by overpopulation.
-				<br>- If around cell <input id="born" type="number"/> live neighbours this cell will gonna alive.</p>
-			<p class="reset" id="reset" data-reset="true">Reset to default</p></div>
-			<img data-place="true" src="https://www.svgrepo.com/show/125019/close.svg" alt="">
-    </div>
+		<div class="rules" id="rules" data-place="true">
+			<div class="rules-info">
+				<p>
+					- Each cell with <input id="diesmin" type="number" /> or less neighbors gonna die by loneliness. <br />- Each
+					cell with <input id="diesmax" type="number" /> or more neighbors dies too but this time by overpopulation.
+					<br />- If around cell <input id="born" type="number" /> live neighbours this cell will gonna alive.
+				</p>
+				<p class="reset" id="reset" data-reset="true">Reset to default</p>
+			</div>
+			<img data-place="true" src="https://www.svgrepo.com/show/125019/close.svg" alt="" />
+		</div>
 		<button class="rules-button" id="rulesbutton">Rules</button>
-		<div class="random-value" id="rv">Create <br><b id="random-text">1000</b><br>random cells</div>
-		<input class="input-random" id="ri" type="range" min="500" max="1500" step="50">
+		<div class="random-value" id="rv">Create <br /><b id="random-text">1000</b><br />random cells</div>
+		<input class="input-random" id="ri" type="range" min="500" max="1500" step="50" />
 		<button class="create" id="create">Create</button>
 		<script src="script.js"></script>
 	</body>
