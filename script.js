@@ -17,6 +17,10 @@ const $rules = document.querySelector('#rules')
 const $rulesButton = document.querySelector('#rulesbutton')
 const $reset = document.querySelector('#reset')
 const ctx = $canvas.getContext('2d')
+const $randomValue = document.querySelector('#rv')
+const $randomInput = document.querySelector('#ri')
+const $randomText = document.querySelector('#random-text')
+const $create = document.querySelector('#create')
 
 $canvas.addEventListener('mousedown', mousedown)
 $canvas.addEventListener('mouseup', mouseup)
@@ -32,6 +36,8 @@ $born.addEventListener('input', born)
 $cleare.addEventListener('click', () => game.cleare())
 $rulesButton.addEventListener('click', rulesShow)
 $rules.addEventListener('click', rulesHide)
+$randomInput.addEventListener('input', input)
+$create.addEventListener('click', createRandom)
 
 // Изменение масштаба и перемещение
 let offsetX = 0
@@ -82,6 +88,7 @@ function mouseup(event) {
 	}
 }
 
+// Скалирование и скорость
 function scale(type) {
 	if (type === '-' && field.skale > 0.3) {
 		field.skale -= 0.2
@@ -152,10 +159,7 @@ $canvas.height = field.height()
 
 class Cell {
 	constructor(row, col, isAlive) {
-		this.row = row,
-		this.col = col,
-		this.neighbours = 0,
-		this.isAlive = isAlive
+		;(this.row = row), (this.col = col), (this.neighbours = 0), (this.isAlive = isAlive)
 	}
 
 	render() {
@@ -391,14 +395,14 @@ function privet() {
 		2, 3, 4, 5, 6, 7, 7, 5, 5, 5, 2, 2, 2, 7, 6, 5, 4, 3, 2, 3, 4, 5, 6, 7, 5, 7, 6, 5, 4, 3, 2, 3, 5, 4, 2, 3, 4, 5, 6,
 		7, 7, 6, 5, 4, 3, 2, 2, 2, 2, 8, 8, 8, 8, 8, 8, 5, 5, 5, 8, 8, 8, 8, 8, 8, 8, 6, 6, 8, 7, 6, 5, 2, 2, 2, 2, 3, 4, 5,
 		6, 7, 8, 3, 4, 8, 8, 8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 5, 5, 5, 2, 4, 3, 5, 6, 7, 8, 8, 8, 8, 8, 7, 5, 4, 2, 6, 8, 7, 5,
-		6, 4, 3, 2, 2, 2, 2, 5, 5, 5, 2, 3, 4, 5, 6, 7, 8, 8, 8, 8, 5, 5, 5, 2, 2, 2, 2, 2, 5, 5, 2, 7
+		6, 4, 3, 2, 2, 2, 2, 5, 5, 5, 2, 3, 4, 5, 6, 7, 8, 8, 8, 8, 5, 5, 5, 2, 2, 2, 2, 2, 5, 5, 2, 7,
 	]
 	const c = [
 		4, 4, 4, 4, 4, 4, 8, 8, 7, 6, 5, 6, 7, 10, 10, 10, 10, 10, 12, 14, 14, 14, 14, 14, 12, 16, 16, 16, 16, 16, 17, 18,
 		18, 18, 19, 20, 20, 20, 20, 20, 22, 22, 22, 22, 22, 22, 23, 24, 25, 16, 20, 22, 23, 24, 25, 23, 24, 25, 14, 10, 8,
 		7, 6, 5, 4, 8, 6, 29, 29, 29, 29, 29, 30, 31, 32, 32, 32, 32, 32, 32, 32, 29, 29, 31, 30, 34, 34, 34, 34, 34, 34,
 		34, 35, 36, 37, 35, 36, 37, 41, 41, 41, 41, 41, 41, 41, 42, 43, 44, 46, 46, 46, 46, 46, 46, 48, 48, 48, 48, 48, 48,
-		48, 50, 49, 51, 51, 50, 49, 53, 53, 53, 53, 53, 53, 53, 54, 55, 56, 54, 55, 56, 54, 55, 56, 13, 11, 13, 11, 8, 44
+		48, 50, 49, 51, 51, 50, 49, 53, 53, 53, 53, 53, 53, 53, 54, 55, 56, 54, 55, 56, 54, 55, 56, 13, 11, 13, 11, 8, 44,
 	]
 
 	for (let i = 0; i < r.length; i++) {
@@ -411,3 +415,33 @@ function privet() {
 	game.render()
 }
 privet()
+
+
+// Генерация рандомных ячеек
+function setRandom(num = 1000) {
+	cells = []
+	for (let i = 0; i < num; i++) {
+
+		const x = Math.round(Math.random() * 71)
+		const y = Math.round(Math.random() * 34)
+		const check = cells.filter(el => el.row === y && el.col === x && el.isAlive)
+
+		if (check.length > 0) {
+			i--
+		} else {
+			cells.push(new Cell(y, x, true))
+		}
+	}
+	game.render()
+}
+
+
+function input (event) {
+	$randomText.textContent = event.target.value
+}
+
+function createRandom () {
+	const num = +$randomText.textContent
+	game.cleare()
+	setRandom(num)
+}

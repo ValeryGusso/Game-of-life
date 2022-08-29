@@ -16,7 +16,7 @@ body {
 	width: 100%;
 	height: 100vh;
 	/* background: linear-gradient(45deg, #283c86, #45a247); */
-	background: linear-gradient(45deg, #16222A, #3A6073);
+	background: linear-gradient(45deg, #16222a, #3a6073);
 }
 
 .field {
@@ -24,8 +24,8 @@ body {
 	height: 75vmin;
 	/* background: linear-gradient(rgb(0, 84, 166), transparent 1px),
 		linear-gradient(90deg, rgb(0, 84, 166), rgb(214, 201, 169) 1px); */
-	background: linear-gradient(rgba(240, 242, 240, 0.3), transparent 1px),
-		linear-gradient(90deg, rgba(240, 242, 240, 0.3), #232526 1px);
+	background: linear-gradient(rgba(240, 242, 240, 0.2), transparent 1px),
+		linear-gradient(90deg, rgba(240, 242, 240, 0), #232526 1px);
 	background-size: var(--s) var(--s);
 	background-position: var(--x) var(--y);
 	filter: drop-shadow(1vmin -1vmin 1vmin rgba(255, 255, 255, 0.3));
@@ -50,7 +50,7 @@ body {
 	justify-items: center;
 	align-items: center;
 	font-size: 2.5vmin;
-	color: #BBD2C5
+	color: #bbd2c5;
 }
 
 .menu {
@@ -69,7 +69,7 @@ body {
 	flex-direction: column;
 	column-gap: 100px;
 	font-size: 1vmax;
-	color: #BBD2C5
+	color: #bbd2c5;
 }
 
 .skale {
@@ -107,7 +107,7 @@ button {
 
 button:hover {
 	transform: scale(1.05);
-	filter: drop-shadow(5px 5px 4px white)
+	filter: drop-shadow(5px 5px 4px white);
 }
 
 button:active {
@@ -143,7 +143,7 @@ button:active {
 	text-align: center;
 	line-height: 7vmin;
 	font-size: 3vmin;
-	color:azure;
+	color: azure;
 }
 
 .reset {
@@ -170,7 +170,7 @@ button:active {
 }
 
 .rules-info input:hover {
-	cursor: default
+	cursor: default;
 }
 
 .rules-info input:focus {
@@ -199,3 +199,34 @@ button:active {
 .rules img:hover {
 	transform: scale(1.05);
 }
+
+.input-random {
+	position: absolute;
+	top: 60vmin;
+	left: 3.5vmax;
+	cursor: pointer;
+	width: 5vmax;
+	transform: scale(1.5);
+}
+
+.random-value {
+	position: absolute;
+	top: 47vmin;
+	left: 0.5vmax;
+	width: 12vmax;
+	text-align: center;
+	color: #bbd2c5;
+	font-size: 2vmin;
+	line-height: 4vmin;
+}
+.random-value b {
+ font-size: 3vmin;
+}
+
+.create {
+	position: absolute;
+	top: 63vmin;
+	left: 2.5vmax;
+	width: 7vmax;
+	font-size: 2vmin;
+ }
