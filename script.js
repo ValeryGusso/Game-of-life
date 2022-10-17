@@ -50,12 +50,16 @@ let timeStart
 let timeEnd
 
 function mousedown(event) {
+	event.preventDefault()
+	document.body.style = '--cursor: grab'
 	startPositionX = event.offsetX
 	startPositionY = event.offsetY
 	timeStart = new Date()
 }
 
 function mouseup(event) {
+	event.preventDefault()
+	document.body.style = '--cursor: default'
 	endPositionX = event.offsetX
 	endPositionY = event.offsetY
 	timeEnd = new Date()
@@ -416,12 +420,10 @@ function privet() {
 }
 privet()
 
-
 // Генерация рандомных ячеек
 function setRandom(num = 1000) {
 	cells = []
 	for (let i = 0; i < num; i++) {
-
 		const x = Math.round(Math.random() * 71)
 		const y = Math.round(Math.random() * 34)
 		const check = cells.filter(el => el.row === y && el.col === x && el.isAlive)
@@ -435,12 +437,11 @@ function setRandom(num = 1000) {
 	game.render()
 }
 
-
-function input (event) {
+function input(event) {
 	$randomText.textContent = event.target.value
 }
 
-function createRandom () {
+function createRandom() {
 	const num = +$randomText.textContent
 	game.cleare()
 	setRandom(num)

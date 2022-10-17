@@ -30,6 +30,7 @@ body {
 	background-size: var(--s) var(--s);
 	background-position: var(--x) var(--y);
 	filter: drop-shadow(1vmin -1vmin 1vmin rgba(255, 255, 255, 0.3));
+	cursor: var(--cursor);
 }
 
 .foother {
